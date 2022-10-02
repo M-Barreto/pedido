@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pedido de namoro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+    <h1 id="pergunta">Quer Namorar Comigo?</h1>
+
+    <main>
+    <section>
+
+    <div id = "sim">
+        SIM :)
+    </div>
+
+    <div id="nao">
+        NÃO
+    </div>
+
+    </section>
+
+    </main>
+
+    <script>
+
+      
+       var s = window.document.getElementById('sim')
+       var p = window.document.getElementById('pergunta')
+       var t = window.document.getElementById('nao')
+       s.addEventListener('click',clicar)
+
+
+        function clicar() {
+            s.style.opacity= '0%'
+            p.innerText= 'Você fez a melhor escolha!!'
+            t.style.opacity= '0%'
+            
+            
+            
+        }
+      
+
+      $("#nao").mouseenter(function() {
+        var divsize = 200;
+        var heightScreen = $(document).height();
+        var widthScreen = $(document).width();
+
+        var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+        var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+
+
+        if (posx > (heightScreen - (divsize*2))) {
+          posx = posx - (divsize*2);
+        }
+
+        if (posy > (widthScreen - (divsize*2))) {
+          posy = posy - (divsize*2);
+        }
+
+          var elementStyle = document.getElementById("nao").style;
+
+          elementStyle.position = "relative";
+          elementStyle.top = posy + 'px';
+          elementStyle.left = posx + 'px';
+          // $("#nao")
+          //       	.css({
+          //       	    position: 'absolute',
+          //       	    left: posx,
+          //       	    top: posy,
+          //       	    display: 'block'
+          //       	})
+          //           .hide('explode', { pieces: 150 }, 700);
+
+      });
+    
+
+    </script>
+
+</body>
+</html>
